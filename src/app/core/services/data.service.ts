@@ -4,14 +4,12 @@ import { BehaviorSubject } from 'rxjs';
 @Injectable()
 export class DataService {
 
-  private albumNameSource = new BehaviorSubject<string>("");
-  currentAlbumName = this.albumNameSource.asObservable();
+  private searchParamSource = new BehaviorSubject<string>("");
+  currentSearchParam = this.searchParamSource.asObservable();
 
   constructor() { }
 
-  changeAlbumName(albumName: string) {
-    this.albumNameSource.next(albumName);
-    console.log(albumName);
-    
+  changeSearchParam(searchParam: string) {
+    this.searchParamSource.next(searchParam);
   }
 }

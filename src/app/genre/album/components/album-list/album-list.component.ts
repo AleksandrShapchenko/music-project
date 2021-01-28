@@ -12,7 +12,7 @@ import { AlbumHttpClientService } from '../../services/album-http-client.service
 export class AlbumListComponent implements OnInit {
   genreName: string;
   albums: Album[];
-  albumName: string;
+  searchParam: string;
 
   constructor(private http: AlbumHttpClientService, private route: ActivatedRoute, private dataService: DataService) { }
 
@@ -28,7 +28,7 @@ export class AlbumListComponent implements OnInit {
       }
     )
 
-    this.dataService.currentAlbumName.subscribe(albumName => this.albumName = albumName);
+    this.dataService.currentSearchParam.subscribe(searchParam => this.searchParam = searchParam);
   }
 
 }

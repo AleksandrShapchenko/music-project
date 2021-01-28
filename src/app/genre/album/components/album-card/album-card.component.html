@@ -36,12 +36,13 @@
 
 
 <div class="card-bg" [ngStyle]="{backgroundImage: imgLargeURL}">
-    <div class="card-bg-overlay">
+    <div class="card-bg-overlay" (click)="toggleLikeAlbum()">
         <div class="content-wrapp">
             <span class="album-name">{{album.name}}</span>
             <span class="artist-name">{{album.artist.name}}</span>
             <svg class="card-heart">
-                <use xlink:href="#heart-empty"></use>
+                <use *ngIf="!isLiked" xlink:href="#heart-empty"></use>
+                <use *ngIf="isLiked" xlink:href="#heart-filled"></use>
             </svg>
         </div>
     </div>

@@ -6,7 +6,6 @@ import { AlbumPageComponent } from './components/album-page/album-page.component
 import { AlbumHeaderComponent } from './components/album-header/album-header.component';
 import { AlbumListComponent } from './components/album-list/album-list.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
-import { AlbumService } from './services/album.service';
 import { AlbumHttpClientService } from './services/album-http-client.service';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,6 +23,6 @@ import { FilterPipe } from './pipes/filter.pipe';
     FormsModule
   ],
   exports: [AlbumPageComponent],
-  providers: [AlbumService, AlbumHttpClientService]
+  providers: [AlbumHttpClientService]
 })
 export class AlbumModule { }

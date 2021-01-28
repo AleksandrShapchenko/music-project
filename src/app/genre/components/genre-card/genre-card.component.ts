@@ -12,7 +12,13 @@ export class GenreCardComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(simpleChanges) {
+    if(simpleChanges.firstchange) {
+      const genreName = this.genre.name.toLocaleLowerCase();
+      localStorage.setItem(`${genreName}Liked`, `{"liked": {}, "likedNumber": "0"}`);
+    }
+  }
 
+  ngOnInit(): void {
   }
 }

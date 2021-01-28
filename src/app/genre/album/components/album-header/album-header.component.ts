@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
@@ -6,18 +7,24 @@ import { DataService } from 'src/app/core/services/data.service';
   templateUrl: './album-header.component.html',
   styleUrls: ['./album-header.component.scss']
 })
-export class AlbumHeaderComponent implements OnInit {
+export class AlbumHeaderComponent implements OnInit, DoCheck {
 
-  albumName: string;
+  searchParam: string;
+  likedNumber: string;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.dataService.currentAlbumName.subscribe(albumName => this.albumName = albumName);
+    this.dataService.currentSearchParam.subscribe(searchParam => this.searchParam = searchParam);
   }
 
-  changeName() {
-      this.dataService.changeAlbumName(this.albumName);
+  ngDoCheck(): void {
+    const genreName = this.route.snapshot.params.genre;
+    this.likedNumber = JSON.parse(localStorage.getItem(`${genreName}Liked`)).likedNumber;
+  }
+
+  changeSearchParam() {
+      this.dataService.changeSearchParam(this.searchParam);
   }
 
 }
