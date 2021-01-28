@@ -7,8 +7,7 @@
 }
 
 .card-bg,
-.card-bg-overlay,
-.card-inner-wrapp {
+.card-bg-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -23,36 +22,14 @@
 }
 
 .card-bg-overlay {
-    background: tomato;
+    background: #000;
     -webkit-transition: opacity .1s;
     transition: opacity .1s;
     opacity: 0;
     border-radius: inherit;
-}
-
-
-.card-inner-wrapp {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.card-text {
-    font-size: 18px;
-    line-height: 24px;
-    letter-spacing: -.4px;
-    font-weight: 700;
-}
-
-.card-inner-wrapp:hover {
-    text-decoration: underline;
+    cursor: pointer;
 }
 
 :host:hover .card-bg-overlay {
-    opacity: .2;
-}
-
-.card-inner-wrapp:active {
-    text-decoration: underline;
-    color: #ccc;
+    opacity: 1;
 }

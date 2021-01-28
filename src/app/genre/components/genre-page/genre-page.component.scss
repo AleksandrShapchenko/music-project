@@ -1,5 +1,9 @@
-.container {
+.content-wrapp {
     max-width: 800px;
+    position: absolute;
     margin: 0 auto;
-    position: relative;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
 }

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseApiUrl: 'http://ws.audioscrobbler.com/2.0/'
+  baseApiURL: 'http://ws.audioscrobbler.com/2.0/',
+  ATOKEN: '22e5dcb7293a23da484afeacce80c247'
 };
 
 /*

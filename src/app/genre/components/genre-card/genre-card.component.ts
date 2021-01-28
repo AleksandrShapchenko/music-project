@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Genre } from 'src/app/core/models/genre.interface';
 
 @Component({
   selector: 'app-genre-card',
@@ -7,14 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GenreCardComponent implements OnInit {
 
-  @Input() BGImgURL: String;
+  @Input() genre: Genre;
+  
   constructor() { }
 
   ngOnInit(): void {
 
-  }
-
-  isColor() {
-    
   }
 }
