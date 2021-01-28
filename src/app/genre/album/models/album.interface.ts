@@ -6,7 +6,7 @@ export interface Album {
     '@attr': AlbumAttr,
     artist: Artist,
     image: Image[],
-    mbid: String,
-    name: String,
-    url: String
+    mbid: string,
+    name: string,
+    url: string
 }

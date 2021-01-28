@@ -1,7 +1,7 @@
 export interface AlbumsAttr {
-    page: String,
-    perPage: String,
-    tag: String,
-    total: String,
-    totalPages: String
+    page: string,
+    perPage: string,
+    tag: string,
+    total: string,
+    totalPages: string
 }

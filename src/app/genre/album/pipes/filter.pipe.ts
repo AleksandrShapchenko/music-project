@@ -9,7 +9,6 @@ export class FilterPipe implements PipeTransform {
 
   // filter by string
   transform(albums: Album[], ...args: string[]): unknown {
-    console.log(albums, args);
 
     let searchParam: string = args.join('');
     if(!searchParam) return albums;

@@ -1,4 +1,4 @@
 export interface Image {
-    '#text': String,
-    size: String
+    '#text': string,
+    size: string
 }

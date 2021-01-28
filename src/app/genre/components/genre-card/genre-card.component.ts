@@ -12,14 +12,6 @@ export class GenreCardComponent implements OnInit {
   
   constructor() { }
 
-  ngOnChanges(simpleChanges) {
-    // check for first change and set item
-    if(simpleChanges.firstchange) {
-      const genreName = this.genre.name.toLocaleLowerCase();
-      localStorage.setItem(`${genreName}Liked`, `{"liked": {}, "likedNumber": "0"}`);
-    }
-  }
-
   ngOnInit(): void {
   }
 }

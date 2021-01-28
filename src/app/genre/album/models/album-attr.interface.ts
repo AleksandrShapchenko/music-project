@@ -1,3 +1,3 @@
 export interface AlbumAttr {
-    rank: String
+    rank: string
 }
