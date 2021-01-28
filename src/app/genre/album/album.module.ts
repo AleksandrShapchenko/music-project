@@ -7,20 +7,23 @@ import { AlbumHeaderComponent } from './components/album-header/album-header.com
 import { AlbumListComponent } from './components/album-list/album-list.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { AlbumService } from './services/album.service';
+import { AlbumHttpClientService } from './services/album-http-client.service';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
 @NgModule({
-  declarations: [AlbumPageComponent, AlbumHeaderComponent, AlbumListComponent, AlbumCardComponent],
+  declarations: [AlbumPageComponent, AlbumHeaderComponent, AlbumListComponent, AlbumCardComponent, FilterPipe],
   imports: [
     CommonModule,
     HttpClientModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   exports: [AlbumPageComponent],
-  providers: [AlbumService]
+  providers: [AlbumService, AlbumHttpClientService]
 })
 export class AlbumModule { }

@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GenreModule } from './genre/genre.module';
+import { DataService } from './core/services/data.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { GenreModule } from './genre/genre.module';
     AppRoutingModule,
     GenreModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,24 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { Observable, Subscription } from 'rxjs';
+
 import { AlbumsResponse } from '../models/albums-response.interface';
+import { AlbumHttpClientService } from './album-http-client.service';
 
 @Injectable()
 export class AlbumService {
-  baseApiURL = environment.baseApiURL;
-  ATOKEN = environment.ATOKEN;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: AlbumHttpClientService) { }
 
-  getAlbumsByGenre(genreName: String): Observable<AlbumsResponse> {
-    return this.http.get<AlbumsResponse>(`${this.baseApiURL}?method=tag.gettopalbums&tag=${genreName}&api_key=${this.ATOKEN}&format=json`);
+  getAlbumsByGenre(genreName: string): Subscription {
+    if(!localStorage.getItem(genreName)) {
+
+      return this.http.getAlbumsByGenreFromAPI(genreName).subscribe(response => {
+      localStorage.setItem(genreName, JSON.stringify(response));
+      })
+
+    } else {
+      // return localStorage.getItem(genreName);
+    }
+
   }
 }

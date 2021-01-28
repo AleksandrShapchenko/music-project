@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/core/services/data.service';
 
 @Component({
   selector: 'app-album-header',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlbumHeaderComponent implements OnInit {
 
-  constructor() { }
+  albumName: string;
+
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
+    this.dataService.currentAlbumName.subscribe(albumName => this.albumName = albumName);
+  }
+
+  changeName() {
+      this.dataService.changeAlbumName(this.albumName);
   }
 
 }
