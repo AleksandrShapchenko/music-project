@@ -24,7 +24,6 @@
 
 .card-bg-overlay {
     background: tomato;
-    -webkit-transition: opacity .1s;
     transition: opacity .1s;
     opacity: 0;
     border-radius: inherit;
@@ -53,6 +52,5 @@
 }
 
 .card-inner-wrapp:active {
-    text-decoration: underline;
     color: #ccc;
 }

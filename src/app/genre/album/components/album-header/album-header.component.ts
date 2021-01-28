@@ -15,6 +15,7 @@ export class AlbumHeaderComponent implements OnInit, DoCheck {
   constructor(private dataService: DataService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    // observe search parameter
     this.dataService.currentSearchParam.subscribe(searchParam => this.searchParam = searchParam);
   }
 
@@ -23,6 +24,7 @@ export class AlbumHeaderComponent implements OnInit, DoCheck {
     this.likedNumber = JSON.parse(localStorage.getItem(`${genreName}Liked`)).likedNumber;
   }
 
+  // change observable search parameter
   changeSearchParam() {
       this.dataService.changeSearchParam(this.searchParam);
   }

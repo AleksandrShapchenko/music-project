@@ -27,7 +27,7 @@ export class AlbumListComponent implements OnInit {
         })
       }
     )
-
+      // observe search parameter
     this.dataService.currentSearchParam.subscribe(searchParam => this.searchParam = searchParam);
   }
 

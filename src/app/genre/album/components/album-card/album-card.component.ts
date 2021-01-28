@@ -24,12 +24,14 @@ export class AlbumCardComponent implements OnInit {
     const localStorItemKey  = `${this.genreName}Liked`;
     const localStorItem = JSON.parse(localStorage.getItem(localStorItemKey));
 
+    // init images
     this.images = this.album.image;
     this.imgLarge = this.images.find(img => img.size === "large");
 
     this.imgLargeURL = `url('${this.imgLarge['#text']}')`;
 
-    if(localStorItem.liked[rank] === true) {
+    // check like status
+    if(localStorItem.liked[rank]) {
       this.isLiked = true;
     }
   }
@@ -39,7 +41,7 @@ export class AlbumCardComponent implements OnInit {
     const localStorItemKey  = `${this.genreName}Liked`;
     const localStorItem = JSON.parse(localStorage.getItem(localStorItemKey));
 
-
+    // change status and write to localStorage
     if(!this.isLiked) {
       this.isLiked = true;
       localStorItem.liked[rank] = true;

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
 import { Genre } from 'src/app/core/models/genre.interface';
 
 import { GENRES } from '../../../core/data/genres'

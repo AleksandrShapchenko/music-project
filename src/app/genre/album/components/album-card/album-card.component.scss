@@ -23,7 +23,6 @@
 
 .card-bg-overlay {
     background: #000;
-    -webkit-transition: opacity .1s;
     transition: opacity .1s;
     opacity: 0;
     border-radius: inherit;
@@ -46,12 +45,14 @@
 }
 
 .album-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 700;
     margin-bottom: 12px;
 }
 
 .artist-name {
     font-size: .9rem;
+    font-weight: 300;
     margin-bottom: 10px;
 }
 

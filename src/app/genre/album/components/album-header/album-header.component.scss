@@ -11,8 +11,18 @@
     align-items: center;
 }
 
+.header-link {
+    font-size: 1rem;
+}
+
 .search-input {
-    margin-left: 20px;
+    margin-left: 2em;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .heart-wrapp {
@@ -35,7 +45,15 @@
     top: 0;
     left: 50%;
     transform: translate(0, -30%);
-    background-color: rgb(48, 48, 139);
+    background-color: rgba(255, 99, 71, 0.897);
     font-weight: 600;
     font-size: 14px;
+}
+
+.header-link:hover {
+    color: rgb(255, 168, 153);
+}
+
+.header-link:active {
+    color: #ccc;
 }
