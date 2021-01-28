@@ -1,5 +1,12 @@
 # MusicProject
 
+Для запуска проекта необходимо иметь npm, Angular cli, а так же, после клонирования репозитория:
+1. В корне проекта прописать npm i;
+2. В корне проекта прописать ng serve -o;
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
 ## Development server
